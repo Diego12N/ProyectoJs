@@ -6,7 +6,7 @@ let precioEntrada1 = 500;
 
 function calculo(cantidad, precio) { 
     montoFinal = cantidad * precio;
-    alert("$ " + montoFinal);
+    alert("Total a pagar $ " + montoFinal);
 }
 
 let cantidadConvertida = Number(cantidadentradas)
