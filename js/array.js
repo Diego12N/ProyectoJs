@@ -10,8 +10,33 @@ class Entrada {
     }
 
   }
+
+  let listaDeEventos = [    
+    {
+      id: 1,
+      nombre: "Luciano Pereyra",
+      fechaInicio: "08/12/2021",
+      entradas: [
+        new Entrada (1,"tribunas central", 1200, 1000),
+        new Entrada (2,"Campo", 1800, 2000),
+        new Entrada (3,"tribunas laterales", 800, 2500),
+        new Entrada (4, "Palco", 2500, 600)
+      ],
+    },
+    {
+      id: 2,
+      nombre: "Paulo Londra",
+      fechaInicio: "28/12/2021",
+      entradas: [
+        new Entrada (1,"tribunas central", 1900, 1000),
+        new Entrada (2,"Campo", 2600, 2000),
+        new Entrada (3,"tribunas laterales", 1100, 2500),
+        new Entrada (4, "Palco", 3400, 600)
+      ],
+    }
+  ];
   
-  let listaDeEventos = [
+  /* let listaDeEventos = [
     {
       id: 1,
       nombre: "Luciano Pereyra",
@@ -34,7 +59,7 @@ class Entrada {
         new Entrada (4, "Palco", 3400, 600)
       ],
     }
-  ];
+  ]; */
   
   //SELECCION DE EVENTO
   let mensaje = "";
@@ -123,5 +148,22 @@ if (infoEventos === "si") {
 } else {
     alert("Muchas gracias por tu compra!")
 }
+
+//ORDEN DE LA PROPIEDAD ENTRADAS POR PRECIO (DESAFIO COMPLEMENTARIO)
+
+for(const evento of listaDeEventos) {
+  evento.entradas.sort(function (a, b) {
+    if (a.precio > b.precio) {
+      return 1;
+    }
+    if (a.precio < b.precio) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  });
+}
+
+console.log(listaDeEventos)
 
 
