@@ -36,31 +36,6 @@ class Entrada {
     }
   ];
   
-  /* let listaDeEventos = [
-    {
-      id: 1,
-      nombre: "Luciano Pereyra",
-      fechaInicio: "08/12/2021",
-      entradas: [
-        new Entrada (1,"tribunas laterales", 800, 2500),
-        new Entrada (2,"tribunas central", 1200, 1000),
-        new Entrada (3,"Campo", 1800, 2000),
-        new Entrada (4, "Palco", 2500, 600)
-      ],
-    },
-    {
-      id: 2,
-      nombre: "Paulo Londra",
-      fechaInicio: "28/12/2021",
-      entradas: [
-        new Entrada (1,"tribunas laterales", 1100, 2500),
-        new Entrada (2,"tribunas central", 1900, 1000),
-        new Entrada (3,"Campo", 2600, 2000),
-        new Entrada (4, "Palco", 3400, 600)
-      ],
-    }
-  ]; */
-  
   //SELECCION DE EVENTO
   let mensaje = "";
   
