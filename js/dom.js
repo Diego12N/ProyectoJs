@@ -1,0 +1,1 @@
+let eventContent = document.getElementsByClassName("event-bg")

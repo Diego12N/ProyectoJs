@@ -74,13 +74,12 @@ body {
     flex-wrap: nowrap;
 }
 
-.section-container h2, .form-tittle {
-    width: max-content;
+.section-container, .form-tittle {
     padding: 10px;
 }
 
 
-.section-item__container {
+#section-item__container, .item__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -88,14 +87,24 @@ body {
     margin-top: 20px;
 }
 
-.event-bg {
-    max-width: 400px;
-    flex-grow: 1;
-    background-color: skyblue;
+.event-tittle { 
     margin: 10px;
-    padding: 10px;
+    color: #6657A2;
+    font-family: 'Noto Sans', sans-serif;
 }
 
+.event-tittle h2 {
+    font-size: 20px;
+}
+
+.event-tittle p {
+    font-size: 15px;
+}
+
+.listaEvento {
+    display: inline-block;
+    color: red;
+}
 
 #service-item {
     margin: 0 50px;

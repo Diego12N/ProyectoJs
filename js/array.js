@@ -16,6 +16,7 @@ class Entrada {
       id: 1,
       nombre: "Luciano Pereyra",
       fechaInicio: "08/12/2021",
+      imagenes: '/img/Plondra.jpg', 
       entradas: [
         new Entrada (1,"tribunas central", 1200, 1000),
         new Entrada (2,"Campo", 1800, 2000),
@@ -27,6 +28,7 @@ class Entrada {
       id: 2,
       nombre: "Paulo Londra",
       fechaInicio: "28/12/2021",
+      imagenes: '/img/Lpereyra.jpg',
       entradas: [
         new Entrada (1,"tribunas central", 1900, 1000),
         new Entrada (2,"Campo", 2600, 2000),
@@ -35,6 +37,22 @@ class Entrada {
       ],
     }
   ];
+
+  //DOM
+  
+  let contenidoDeEventos = document.getElementById("section-item__container");  
+  
+  for (const listaEvento of listaDeEventos) {
+    let tittle = document.createElement("h2");
+    tittle.classList.add("event-tittle")
+    tittle.innerHTML=  `<img src="${listaEvento.imagenes}" alt="imagen evento">
+                        <h2>${listaEvento.nombre}</h2>
+                        <p>Fecha: ${listaEvento.fechaInicio}</p>
+                        <p>$ ${listaEvento.entradas[0].precio} </p>
+                        `;
+    contenidoDeEventos.appendChild(tittle)
+  }
+
   
   //SELECCION DE EVENTO
   let mensaje = "";
@@ -113,7 +131,6 @@ function formulario() {
 
 let infoEventos = prompt("¿Quieres estar al tanto de nuestros proximos eventos? Ingresa SI o NO segun corresponda.")
 
-
 infoEventos = infoEventos.toLowerCase()
 console.log(infoEventos)
 
@@ -139,6 +156,6 @@ for(const evento of listaDeEventos) {
   });
 }
 
-console.log(listaDeEventos)
+console.log(listaDeEventos);
 
 
