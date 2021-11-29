@@ -85,7 +85,7 @@ class Entrada {
       
       for (const stock of evento.entradas) { 
         const inStock = stock.stock;
-        if(inStock <= 0) {
+        if(inStock > 0) {
             btmEntrada.classList.add("btm-evento");
             btmEntrada.textContent = 'VER ENTRADAS';
           } else {
