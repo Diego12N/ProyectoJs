@@ -8,39 +8,107 @@ class Entrada {
     venta(cantidad) {
       this.stock -= cantidad;
     }
-
   }
 
   let listaDeEventos = [    
     {
       id: 1,
-      nombre: "Luciano Pereyra",
+      nombre: "LUCIONA PEREYRA",
       fechaInicio: "08/12/2021",
-      imagenes: '/img/Plondra.jpg', 
+      horario: "19:45hs",
+      imagen: '/img/Lpereyra1.jpg', 
       entradas: [
-        new Entrada (1,"tribunas central", 1200, 1000),
-        new Entrada (2,"Campo", 1800, 2000),
-        new Entrada (3,"tribunas laterales", 800, 2500),
+        new Entrada (1,"tribunas laterales", 800, 2500),
+        new Entrada (2,"tribunas central", 1200, 1000),
+        new Entrada (3,"Campo", 1800, 2000),
         new Entrada (4, "Palco", 2500, 600)
       ],
     },
     {
       id: 2,
-      nombre: "Paulo Londra",
-      fechaInicio: "28/12/2021",
-      imagenes: '/img/Lpereyra.jpg',
+      nombre: "ABEL PINTOS",
+      fechaInicio: "16/12/2021",
+      horario: "20:30hs",
+      imagen: '/img/AbelPintos1.jpg',
       entradas: [
-        new Entrada (1,"tribunas central", 1900, 1000),
-        new Entrada (2,"Campo", 2600, 2000),
-        new Entrada (3,"tribunas laterales", 1100, 2500),
+        new Entrada (1,"tribunas laterales", 850, 0),
+        new Entrada (2,"tribunas central", 1500, 1),
+        new Entrada (3,"Campo", 2200, 1),    
+        new Entrada (4, "Palco", 3150, 1)
+      ] 
+    },
+    {
+      id: 3,
+      nombre: "PAULO LONDRA",
+      fechaInicio: "28/12/2021",
+      horario: "21:15hs",
+      imagen: '/img/Plondra1.jpg',
+      entradas: [
+        new Entrada (1,"tribunas laterales", 1100, 2500),
+        new Entrada (2,"tribunas central", 1900, 1000),
+        new Entrada (3,"Campo", 2600, 2000),
         new Entrada (4, "Palco", 3400, 600)
       ],
     }
   ];
 
   //DOM
+
+ 
+  let contenidoDeEventos = document.getElementById("section-item__container");
   
-  let contenidoDeEventos = document.getElementById("section-item__container");  
+  document.addEventListener("DOMContentLoaded" , () =>{
+    proximosEventos();
+  })
+  function proximosEventos() { 
+    listaDeEventos.forEach((evento) => {
+      const funcionInfo = document.createElement("div");
+      funcionInfo.classList.add("evento-container");
+      console.log(funcionInfo);
+
+      const imgContenedor = document.createElement("div");
+      imgContenedor.classList.add('img-container');
+
+      const imgEvento = document.createElement("img");
+      imgEvento.classList.add('img-item');
+      imgEvento.src = evento.imagen; 
+
+      const tituloEvento = document.createElement("h2");
+      tituloEvento.classList.add('titulo-evento');
+      tituloEvento.textContent = evento.nombre;
+
+      const fechaEvento = document.createElement("h3");
+      fechaEvento.classList.add("fecha-evento");
+      fechaEvento.textContent = `${evento.fechaInicio} | ${evento.horario}`;
+
+      const btmEntrada = document.createElement("button");      
+      
+      for (const stock of evento.entradas) { 
+        const inStock = stock.stock;
+        if(inStock <= 0) {
+            btmEntrada.classList.add("btm-evento");
+            btmEntrada.textContent = 'VER ENTRADAS';
+          } else {
+            btmEntrada.classList.add("btm-evento_stock");
+            btmEntrada.textContent = 'SIN STOCK';
+          }         
+      }  
+      
+      imgContenedor.appendChild(imgEvento);
+      funcionInfo.appendChild(imgContenedor);
+      funcionInfo.appendChild(tituloEvento);
+      funcionInfo.appendChild(fechaEvento);
+      funcionInfo.appendChild(btmEntrada);
+
+      contenidoDeEventos.appendChild(funcionInfo);
+    }
+    )
+  }
+
+
+
+  
+ /*  let contenidoDeEventos = document.getElementById("section-item__container");  
   
   for (const listaEvento of listaDeEventos) {
     let tittle = document.createElement("h2");
@@ -53,9 +121,11 @@ class Entrada {
     contenidoDeEventos.appendChild(tittle)
   }
 
+ */
+  
   
   //SELECCION DE EVENTO
-  let mensaje = "";
+  /* let mensaje = "";
   
   for (const evento of listaDeEventos) {
     mensaje += `\n${evento.id}. ${evento.nombre}`;
@@ -159,3 +229,4 @@ for(const evento of listaDeEventos) {
 console.log(listaDeEventos);
 
 
+ */
