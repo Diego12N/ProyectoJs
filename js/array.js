@@ -6,7 +6,10 @@ class Entrada {
       this.stock = stock;
     }
     venta(cantidad) {
-      this.stock -= cantidad;
+      if (cantidad >= this.stock) {
+        this.stock -= cantidad;
+      }
+      
     }
   }
 
@@ -32,9 +35,9 @@ class Entrada {
       imagen: '/img/AbelPintos1.jpg',
       entradas: [
         new Entrada (1,"tribunas laterales", 850, 0),
-        new Entrada (2,"tribunas central", 1500, 1),
-        new Entrada (3,"Campo", 2200, 1),    
-        new Entrada (4, "Palco", 3150, 1)
+        new Entrada (2,"tribunas central", 1500, 0),
+        new Entrada (3,"Campo", 2200, 0),    
+        new Entrada (4, "Palco", 3150, 0)
       ] 
     },
     {
@@ -53,9 +56,11 @@ class Entrada {
   ];
 
   //DOM
-
- 
+  
+  let entradaSeleccionada = [];
   let contenidoDeEventos = document.getElementById("section-item__container");
+  const eventoSection = document.getElementById("evento_section")
+  const seccionDeCompra = document.getElementById('entradas_container');
   
   document.addEventListener("DOMContentLoaded" , () =>{
     proximosEventos();
@@ -64,7 +69,6 @@ class Entrada {
     listaDeEventos.forEach((evento) => {
       const funcionInfo = document.createElement("div");
       funcionInfo.classList.add("evento-container");
-      console.log(funcionInfo);
 
       const imgContenedor = document.createElement("div");
       imgContenedor.classList.add('img-container');
@@ -81,18 +85,28 @@ class Entrada {
       fechaEvento.classList.add("fecha-evento");
       fechaEvento.textContent = `${evento.fechaInicio} | ${evento.horario}`;
 
-      const btmEntrada = document.createElement("button");      
+      const btmEntrada = document.createElement("a"); 
+      btmEntrada.href = "#";
+      btmEntrada.onclick = () => { 
+   
+        entradasDeEvento(evento.id);        
+      }
       
-      for (const stock of evento.entradas) { 
-        const inStock = stock.stock;
-        if(inStock > 0) {
-            btmEntrada.classList.add("btm-evento");
-            btmEntrada.textContent = 'VER ENTRADAS';
-          } else {
-            btmEntrada.classList.add("btm-evento_stock");
-            btmEntrada.textContent = 'SIN STOCK';
-          }         
+      let hayStock = false;
+      for (const entradas of evento.entradas) { 
+        if(entradas.stock > 0) hayStock = true;
+      }
+        
+      if(hayStock){
+        btmEntrada.classList.add("btm-evento");
+        btmEntrada.textContent = 'VER ENTRADAS';
       }  
+      else {
+        btmEntrada.classList.add("btm-evento_stock");
+        btmEntrada.href = "";
+        btmEntrada.textContent = 'SIN STOCK';
+      }         
+      
       
       imgContenedor.appendChild(imgEvento);
       funcionInfo.appendChild(imgContenedor);
@@ -105,8 +119,58 @@ class Entrada {
     )
   }
 
+  function entradasDeEvento(id) { 
 
+    const eventoEntrada = listaDeEventos.find(evento => {
+      return evento.id === id;
+    })
+    
+    entradaSeleccionada.push(eventoEntrada);
+    
+    seleccionUbicacion(entradaSeleccionada);
+  }
 
+  function seleccionUbicacion(ubicacion) {
+    
+      ubicacion.forEach((sector) => {
+        const imgContenedor = document.createElement("div");
+        imgContenedor.classList.add('img-event_container');
+  
+        const imgEvento = document.createElement("img");
+        imgEvento.classList.add('img-event');
+        imgEvento.src = sector.imagen; 
+        
+        const infoContenedor = document.createElement("div");
+        infoContenedor.classList.add('info-general_container');
+
+        const tituloEvento = document.createElement("h2");
+        tituloEvento.classList.add('titulo-entrada');
+        tituloEvento.textContent = sector.nombre;
+  
+        const fechaEvento = document.createElement("h3");
+        fechaEvento.classList.add("fecha-entrada");
+        fechaEvento.textContent = `${sector.fechaInicio} | ${sector.horario}`;
+        
+        eventoSection.appendChild(imgContenedor);
+        imgContenedor.appendChild(imgEvento);
+        eventoSection.appendChild(infoContenedor);
+        infoContenedor.appendChild(tituloEvento);
+        infoContenedor.appendChild(fechaEvento);
+        
+      for(const ubicaciones of sector.entradas){
+        seccionDeCompra.innerHTML += `
+            <p class="ubicacion-evento">Ubicacion: ${ubicaciones.nombreZona}</p>
+            <p class="precio-evento">Precio: $${ubicaciones.precio}</p>
+            <p class="stock-evento">Entradas Disponibles: ${ubicaciones.stock}</p>   
+        `
+      }
+    })        
+  }
+
+ 
+  
+  
+  
   
  /*  let contenidoDeEventos = document.getElementById("section-item__container");  
   

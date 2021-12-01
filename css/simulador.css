@@ -128,7 +128,15 @@ body {
     margin-bottom: 20px;
 }
 
+.btm-link {
+
+}
+
 .btm-evento, .btm-evento_stock { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 100%;
     height: 15%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
