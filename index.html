@@ -18,16 +18,16 @@
             <img src="img/logotipo.svg" alt="Logotipo" class="header-logotipe">
             <nav class="navbar">
                 <ul class="navbar-container">
-                    <li class="navbar-item"><a href="#" class="navbar-item">SERVICIOS</a></li>
-                    <li class="navbar-item"><a href="#" class="navbar-item">EVENTOS</a></li>
-                    <li class="navbar-item"><a href="#" class="navbar-item">CONTACTO</a></li>                    
+                    <li class="navbar-item"><a href="#seccion_servicios" class="navbar-item">SERVICIOS</a></li>
+                    <li class="navbar-item"><a href="#seccion_eventos" class="navbar-item">EVENTOS</a></li>
+                    <li class="navbar-item"><a href="#seccion_formulario" class="navbar-item">CONTACTO</a></li>                    
                 </ul>
             </nav></div>
         
     </header>
     <main class="main-container">
         <section class="section-container">
-            <h2>Nuestros Servicios</h2>
+            <h2 id="seccion_servicios">Nuestros Servicios</h2>
             <div class="item__container id= "service-container">
                     <p id="service-item">
                     Compra entradas
@@ -41,19 +41,20 @@
             </div>            
         </section>
         <section class="section-container">
-            <h2>Proximos Eventos</h2>
+            <h2 id="seccion_eventos">Proximos Eventos</h2>
             <div id="section-item__container">
             </div>  
         </section> 
         <section class="sale-section_container">
             <div id="evento_section">
                 <div id="entradas_container">
+
                 </div>  
             </div>               
         </section>      
 
     </main>
-    <form action="" class="section-container">
+    <form action="" id="seccion_formulario" class="section-container">
         <h2 class="form-tittle">CONTACTO</h2>
         <div class="form-container">
             <label for="fullname" class="input-tittle">Nombre y apellido</label>

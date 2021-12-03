@@ -1,0 +1,9 @@
+#detalle_evento_nombre {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.info-general_container {
+  margin: 20px 0;
+}
