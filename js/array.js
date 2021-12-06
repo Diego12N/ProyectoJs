@@ -18,7 +18,7 @@ let listaDeEventos = [
     nombre: "LUCIANO PEREYRA",
     fechaInicio: "08/12/2021",
     horario: "19:45hs",
-    imagen: "img/Lpereyra1.jpg",
+    imagen: "../Lpereyra1.jpg",
     entradas: [
       new Entrada(1, "Tribunas laterales", 800, 2500),
       new Entrada(2, "Tribunas central", 1200, 1000),
@@ -31,7 +31,7 @@ let listaDeEventos = [
     nombre: "ABEL PINTOS",
     fechaInicio: "16/12/2021",
     horario: "20:30hs",
-    imagen: "img/AbelPintos1.jpg",
+    imagen: "../AbelPintos1.jpg",
     entradas: [
       new Entrada(1, "Tribunas laterales", 850, 0),
       new Entrada(2, "Tribunas central", 1500, 0),
@@ -44,7 +44,7 @@ let listaDeEventos = [
     nombre: "PAULO LONDRA",
     fechaInicio: "28/12/2021",
     horario: "21:15hs",
-    imagen: "img/Plondra1.jpg",
+    imagen: "../Plondra1.jpg",
     entradas: [
       new Entrada(1, "Tribunas laterales", 1100, 2500),
       new Entrada(2, "Tribunas central", 1900, 1000),
