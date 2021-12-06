@@ -60,6 +60,10 @@ body {
   align-items: center;
 }
 
+.main-container {
+  width: 80%;
+}
+
 .section-container {
   align-items: center;
   margin: 50px 50px 150px 50px;
