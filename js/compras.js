@@ -4,7 +4,8 @@ function cargarEvento() {
   let paramsString = location.search;
   let searchParams = new URLSearchParams(paramsString);
   let idEvento = searchParams.get("id");
-  if (idEvento) obtenerEventoPorId(idEvento);
+  if (!idEvento) return (window.location.href = "index.html");
+  obtenerEventoPorId(idEvento);
 }
 
 function obtenerEventoPorId(id) {

@@ -57,18 +57,53 @@ let listaDeEventos = [
 guardarEventosLocalStorage(listaDeEventos);
 
 //DOM
+let contenidoDeEventos = $("#section-item__container");
 
-let contenidoDeEventos = document.getElementById("section-item__container");
+/* let contenidoDeEventos = document.getElementById("section-item__container");
 const eventoSection = document.getElementById("evento_section");
-const seccionDeCompra = document.getElementById("entradas_container");
+const seccionDeCompra = document.getElementById("entradas_container"); */
 
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(() => {
   mostrarEventos();
 });
 
 function mostrarEventos() {
   listaDeEventos.forEach((evento) => {
-    const funcionInfo = document.createElement("div");
+    contenidoDeEventos.append(
+      `
+      <div class="evento-container">
+        <div class="img-container">
+          <img src="${evento.imagen}" alt="${evento.nombre}" class="img-item" />
+        </div>  
+        <h2 class="titulo-evento">${evento.nombre}</h2>
+        <h3 class="fecha-evento">${evento.fechaInicio} | ${evento.horario}</h3>
+        <a href="" id="first-btn${evento.id}" class="first-btn"></a>
+    </div>
+      `
+    );
+
+    $(`#first-btn${evento.id}`).click(() => {
+      $(".first-btn").attr("href", `compras.html?id=${evento.id}`);
+      /* window.location.href = `compras.html?id=${evento.id}`; */
+      obtenerDetalleEvento(evento.id);
+    });
+
+    let hayStock = false;
+    for (const entradas of evento.entradas) {
+      if (entradas.stock > 0) hayStock = true;
+    }
+
+    if (hayStock) {
+      $(`#first-btn${evento.id}`).html("VER ENTRADAS");
+    } else {
+      $(`#first-btn${evento.id}`).html("SIN STOCK");
+      $(`#first-btn${evento.id}`).attr("href", "../index.html");
+      $(`#first-btn${evento.id}`).css(
+        "background",
+        "linear-gradient(to bottom, #a80f71 80%, #880c5a)"
+      );
+    }
+    /* const funcionInfo = document.createElement("div");
     funcionInfo.classList.add("evento-container");
 
     const imgContenedor = document.createElement("div");
@@ -87,7 +122,6 @@ function mostrarEventos() {
     fechaEvento.textContent = `${evento.fechaInicio} | ${evento.horario}`;
 
     const btmEntrada = document.createElement("a");
-    // btmEntrada.href = "#evento_section";
     btmEntrada.onclick = () => {
       window.location.href = `compras.html?id=${evento.id}`;
       obtenerDetalleEvento(evento.id);
@@ -105,15 +139,17 @@ function mostrarEventos() {
       btmEntrada.classList.add("btm-evento_stock");
       btmEntrada.href = "";
       btmEntrada.textContent = "SIN STOCK";
-    }
+    } */
 
-    imgContenedor.appendChild(imgEvento);
+    /*
+
+    /* imgContenedor.appendChild(imgEvento);
     funcionInfo.appendChild(imgContenedor);
     funcionInfo.appendChild(tituloEvento);
     funcionInfo.appendChild(fechaEvento);
     funcionInfo.appendChild(btmEntrada);
 
-    contenidoDeEventos.appendChild(funcionInfo);
+    contenidoDeEventos.appendChild(funcionInfo); */
   });
 }
 

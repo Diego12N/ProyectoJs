@@ -133,10 +133,28 @@ body {
   margin-bottom: 20px;
 }
 
-/* .btm-link {
-} */
+.first-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 15%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(to bottom, #572671 80%, #451a5a);
+  border: none;
+  transition: all 0.7s;
+}
 
-.btm-evento,
+.first-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom, #a80f71 80%, #880c5a);
+}
+
+/* .btm-evento,
 .btm-evento_stock {
   display: flex;
   justify-content: center;
@@ -160,7 +178,7 @@ body {
 }
 .btm-evento_stock:hover {
   cursor: not-allowed;
-}
+} */
 
 #service-item {
   margin: 0 50px;
