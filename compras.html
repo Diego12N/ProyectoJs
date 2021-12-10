@@ -12,12 +12,19 @@
     />
     <link rel="stylesheet" href="css/simulador.css" />
     <link rel="stylesheet" href="css/compras.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script
+      src="https://kit.fontawesome.com/8c698dc94c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
     <header>
       <div class="header-container">
-        <img src="img/logotipo.svg" alt="Logotipo" class="header-logotipe" />
+        <a href="index.html" class="header-logotipe"
+          ><img src="img/logotipo.svg" alt="Cordoba Eventos"
+        /></a>
         <nav class="navbar">
           <ul class="navbar-container">
             <li class="navbar-item">
@@ -37,12 +44,24 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div>
-        <h4>Nuestras redes</h4>
-        <a href=""><img src="" alt="facebook" /></a>
-        <a href=""><img src="" alt="instagram" /></a>
+    <footer id="footer_container">
+      <div id="footer-item">
+        <a href="index.html" id="footer-logotipe"
+          ><img
+            id="footer-logotipe_item"
+            src="img/logotipo.svg"
+            alt="Cordoba Eventos"
+        /></a>
+        <p>|</p>
+        <div id="footer-first_childe">
+          <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
+      <p id="footer-copyright">
+        ©2021 Todos los derechos reservados.
+        <a href="./index.html">Cordoba Eventos.</a>
+      </p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/compras.js"></script>

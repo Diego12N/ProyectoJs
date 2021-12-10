@@ -1,0 +1,51 @@
+#footer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 125px;
+  background: linear-gradient(to bottom, #a80f71 70%, #880c5a);
+}
+
+#footer-item {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 20%;
+}
+
+#footer-item p {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+#footer-logotipe_item {
+  height: 100%;
+}
+
+#footer-first_childe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-instagram,
+.fa-facebook,
+#footer-copyright {
+  color: #fff;
+}
+
+#footer-copyright a {
+  color: #fff;
+}
+.fa-instagram,
+.fa-facebook {
+  vertical-align: text-top;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.fa-instagram {
+  font-size: 26px;
+}

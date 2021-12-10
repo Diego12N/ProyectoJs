@@ -92,7 +92,7 @@ function mostrarEventos() {
       $(`#first-btn${evento.id}`).html("VER ENTRADAS");
     } else {
       $(`#first-btn${evento.id}`).html("SIN STOCK");
-      $(`#first-btn${evento.id}`).attr("href", "../index.html");
+      $(`.first-btn`).removeAttr("href");
       $(`#first-btn${evento.id}`).css(
         "background",
         "linear-gradient(to bottom, #a80f71 80%, #880c5a)"
