@@ -1,103 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/simulador.css" />
-    <link rel="stylesheet" href="css/compras.css" />
-    <link rel="stylesheet" href="css/form.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <script
-      src="https://kit.fontawesome.com/8c698dc94c.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Cordoba Eventos</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <a href="index.html" class="header-logotipe"
-          ><img src="img/logotipo.svg" alt="Cordoba Eventos"
-        /></a>
-        <nav class="navbar">
-          <ul class="navbar-container">
-            <li class="navbar-item">
-              <a href="#service_tittle" class="navbar-item">SERVICIOS</a>
-            </li>
-            <li class="navbar-item">
-              <a href="#event_tittle" class="navbar-item">EVENTOS</a>
-            </li>
-            <li class="navbar-item">
-              <a href="#seccion_formulario" class="navbar-item">CONTACTO</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main class="main-container">
-      <section class="section-container">
-        <h2 id="service_tittle">NUESTROS SERVICIOS</h2>
-        <div class="item__container" id="service-container">
-          <p class="service-item">Compra entradas</p>
-          <p class="service-item">Informacion de eventos</p>
-          <p class="service-item">Bonificaciones</p>
-        </div>
-      </section>
-      <section class="section-container">
-        <h2 id="event_tittle">EVENTOS EN DICIEMBRE</h2>
-        <div id="section-item__container"></div>
-      </section>
-      <section class="sale-section_container">
-        <div id="evento_section">
-          <div id="entradas_container"></div>
-        </div>
-      </section>
-    </main>
-    <form action="" id="seccion_formulario" class="section-container">
-      <h2 class="form-tittle">CONTACTO</h2>
-      <div class="form-container">
-        <label for="fullname" class="input-tittle">Nombre y apellido</label>
-        <input type="text" id="fullname" name="fullname" class="form-item" />
-        <label for="phonenumber" class="input-tittle">Telefono</label>
-        <input type="numer" id="phonenumber" class="form-item" />
-        <label for="mail" class="input-tittle">E-mail</label>
-        <input type="email" id="mail" class="form-item" />
-        <label for="comment" class="input-tittle">Ingresa tu consulta</label>
-        <textarea
-          name=""
-          id="comment"
-          class="form-item form-item_comment"
-        ></textarea>
-        <button class="form-button">ENVIAR</button>
-      </div>
-    </form>
-    <footer id="footer_container">
-      <div id="footer-item">
-        <a href="index.html" id="footer-logotipe"
-          ><img
-            id="footer-logotipe_item"
-            src="img/logotipo.svg"
-            alt="Cordoba Eventos"
-        /></a>
-        <p>|</p>
-        <div id="footer-first_childe">
-          <a href=""><i class="fab fa-facebook"></i></a>
-          <a href=""><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <p id="footer-copyright">
-        ©2021 Todos los derechos reservados.
-        <a href="./index.html">Cordoba Eventos.</a>
-      </p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/array.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/simulador.css" />
+		<link rel="stylesheet" href="css/compras.css" />
+		<link rel="stylesheet" href="css/form.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<script
+			src="https://kit.fontawesome.com/8c698dc94c.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Cordoba Eventos</title>
+	</head>
+	<body>
+		<header>
+			<div class="header-container">
+				<a href="index.html" class="header-logotipe"
+					><img src="img/logotipo.svg" alt="Cordoba Eventos"
+				/></a>
+				<nav class="navbar">
+					<ul class="navbar-container">
+						<li>
+							<a href="#service_tittle" class="navbar-item">SERVICIOS</a>
+						</li>
+						<li>
+							<a href="#event_tittle" class="navbar-item">EVENTOS</a>
+						</li>
+						<li>
+							<a href="#seccion_formulario" class="navbar-item">CONTACTO</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main id="main-container">
+			<section id="banner__section">
+				<div id="parallax__item"></div>
+				<a href="" id="banner__tittle">@cordobaEventos</a>
+				<p id="galery-button__tittle">Galeria</p>
+			</section>
+			<section id="galery__section"></section>
+			<section class="section-container">
+				<article class="article-container">
+					<h2 id="service_tittle">NUESTROS SERVICIOS</h2>
+					<div class="service__container">
+						<div class="item__container">
+							<p class="service-item">Compra entradas</p>
+						</div>
+						<div class="item__container">
+							<p class="service-item">Informacion de eventos</p>
+						</div>
+						<div class="item__container">
+							<p class="service-item">Bonificaciones</p>
+						</div>
+					</div>
+				</article>
+				<article class="article-container">
+					<h2 id="event_tittle">EVENTOS EN DICIEMBRE</h2>
+					<div id="section-item__container"></div>
+				</article>
+				<article class="sale-section_container">
+					<div id="evento_section">
+						<div id="entradas_container"></div>
+					</div>
+				</article>
+			</section>
+		</main>
+
+		<form action="" id="seccion_formulario" class="article-container">
+			<h2 class="form-tittle">CONTACTO</h2>
+			<div class="form-container">
+				<label for="fullname" class="input-tittle">Nombre y apellido</label>
+				<input type="text" id="fullname" name="fullname" class="form-item" />
+				<label for="phonenumber" class="input-tittle">Telefono</label>
+				<input type="numer" id="phonenumber" class="form-item" />
+				<label for="mail" class="input-tittle">E-mail</label>
+				<input type="email" id="mail" class="form-item" />
+				<label for="comment" class="input-tittle">Ingresa tu consulta</label>
+				<textarea
+					name=""
+					id="comment"
+					class="form-item form-item_comment"
+				></textarea>
+				<button class="form-button">ENVIAR</button>
+			</div>
+		</form>
+		<footer id="footer_container">
+			<div id="footer-item">
+				<a href="index.html" id="footer-logotipe"
+					><img
+						id="footer-logotipe_item"
+						src="img/logotipo.svg"
+						alt="Cordoba Eventos"
+				/></a>
+				<p>|</p>
+				<div id="footer-first_childe">
+					<a href=""><i class="fab fa-facebook"></i></a>
+					<a href=""><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<p id="footer-copyright">
+				©2021 Todos los derechos reservados.
+				<a href="./index.html">Cordoba Eventos.</a>
+			</p>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="./js/array.js"></script>
+		<script src="js/galery_event.js"></script>
+	</body>
 </html>

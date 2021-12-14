@@ -73,26 +73,21 @@ function mostrarEventos() {
         </div>  
         <h2 class="titulo-evento">${evento.nombre}</h2>
         <h3 class="fecha-evento">${evento.fechaInicio} | ${evento.horario}</h3>
-        <a href="" id="first-btn${evento.id}" class="first-btn"></a>
+        <a id="first-btn${evento.id}" class="first-btn"></a>
     </div>
       `
     );
 
     $(`#first-btn${evento.id}`).click(() => {
-      $(".first-btn").attr("href", `compras.html?id=${evento.id}`);
+      if (!validarStock(evento.entradas)) return;
+      window.location.href = `compras.html?id=${evento.id}`;
       obtenerDetalleEvento(evento.id);
     });
 
-    let hayStock = false;
-    for (const entradas of evento.entradas) {
-      if (entradas.stock > 0) hayStock = true;
-    }
-
-    if (hayStock) {
+    if (validarStock(evento.entradas)) {
       $(`#first-btn${evento.id}`).html("VER ENTRADAS");
     } else {
       $(`#first-btn${evento.id}`).html("SIN STOCK");
-      $(`.first-btn`).removeAttr("href");
       $(`#first-btn${evento.id}`).css(
         "background",
         "linear-gradient(to bottom, #a80f71 80%, #880c5a)"
@@ -110,4 +105,12 @@ function obtenerDetalleEvento(id) {
 function guardarEventosLocalStorage(eventos) {
   const eventosStr = JSON.stringify(eventos);
   localStorage.setItem("eventos", eventosStr);
+}
+
+function validarStock(entradas) {
+  let hayStock = false;
+  for (const entrada of entradas) {
+    if (entrada.stock > 0) hayStock = true;
+  }
+  return hayStock;
 }
