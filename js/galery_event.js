@@ -6,8 +6,6 @@ $("#banner__section").append(
 	'<button id="galery_button-down"><i class="fas fa-chevron-down"></i></button> <button id="galery_button-up"><i class="fas fa-chevron-up"></i></button>'
 );
 
-$("#galery__section").hide();
-
 $("#galery__section").append(
 	`<div class="galery-item"></div>
     <div class="galery-item"></div>
@@ -17,6 +15,8 @@ $("#galery__section").append(
     <div class="galery-item"></div>
     <div class="galery-item"></div>`
 );
+
+$("#galery__section").hide();
 
 function showButtun() {
 	$("#galery_button-down").click(() => {
