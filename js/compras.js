@@ -18,7 +18,7 @@ function cargarEvento() {
 }
 
 async function getJSONEntradas() {
-	await $.getJSON("../data/entradas.json", function (data) {
+	await $.getJSON("./data/entradas.json", function (data) {
 		stockEventos = [...data];
 	});
 	return stockEventos;
