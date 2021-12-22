@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"nombre": "LUCIANO PEREYRA",
+		"fechaInicio": "08/12/2021",
+		"horario": "19:45hs",
+		"imagen": "./img/Lpereyra1.jpg",
+		"entradas": [
+			{
+				"idZona": 1,
+				"nombreZona": "Tribunas laterales",
+				"precio": 800,
+				"stock": 2500
+			},
+			{
+				"idZona": 2,
+				"nombreZona": "Tribunas central",
+				"precio": 1200,
+				"stock": 1000
+			},
+			{"idZona": 3, "nombreZona": "Campo", "precio": 1800, "stock": 2000},
+			{"idZona": 4, "nombreZona": "Palco", "precio": 2500, "stock": 600}
+		]
+	},
+	{
+		"id": 2,
+		"nombre": "ABEL PINTOS",
+		"fechaInicio": "16/12/2021",
+		"horario": "20:30hs",
+		"imagen": "./img/AbelPintos1.jpg",
+		"entradas": [
+			{
+				"idZona": 1,
+				"nombreZona": "Tribunas laterales",
+				"precio": 850,
+				"stock": 0
+			},
+			{
+				"idZona": 2,
+				"nombreZona": "Tribunas central",
+				"precio": 1500,
+				"stock": 0
+			},
+			{"idZona": 3, "nombreZona": "Campo", "precio": 2200, "stock": 0},
+			{"idZona": 4, "nombreZona": "Palco", "precio": 3150, "stock": 0}
+		]
+	},
+	{
+		"id": 3,
+		"nombre": "PAULO LONDRA",
+		"fechaInicio": "28/12/2021",
+		"horario": "21:15hs",
+		"imagen": "./img/Plondra1.jpg",
+		"imagen2": "./img/pauloLondra2.jpg",
+		"entradas": [
+			{
+				"idZona": 1,
+				"nombreZona": "Tribunas laterales",
+				"precio": 1100,
+				"stock": 2500
+			},
+			{
+				"idZona": 2,
+				"nombreZona": "Tribunas central",
+				"precio": 1900,
+				"stock": 1000
+			},
+			{"idZona": 3, "nombreZona": "Campo", "precio": 2600, "stock": 2000},
+			{"idZona": 4, "nombreZona": "Palco", "precio": 3400, "stock": 600}
+		]
+	}
+]

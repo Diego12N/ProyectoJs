@@ -1,5 +1,5 @@
 $(document).ready(() => {
-	showButtun();
+	showGalery();
 });
 
 $("#banner__section").append(
@@ -13,12 +13,12 @@ $("#galery__section").append(
     <div class="galery-item"></div>
     <div class="galery-item"></div>
     <div class="galery-item"></div>
-    <div class="galery-item"></div>`
+    `
 );
 
 $("#galery__section").hide();
 
-function showButtun() {
+function showGalery() {
 	$("#galery_button-down").click(() => {
 		$("#galery_button-up").show();
 		$("#galery__section").slideDown();

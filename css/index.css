@@ -8,6 +8,7 @@
 header {
 	height: 125px;
 	background-color: #000;
+	border-bottom: 5px solid #fff;
 }
 
 header,
@@ -28,13 +29,12 @@ body,
 }
 
 .header-container {
-	width: 100%;
+	width: 60%;
 	height: 100%;
 	margin: auto;
-	padding: 15px;
-	justify-content: space-around;
+	padding: 15px 0;
+	justify-content: space-between;
 	align-items: center;
-	border-bottom: 5px solid #fff;
 }
 
 .header-logotipe {
@@ -43,7 +43,7 @@ body,
 
 .navbar-container {
 	gap: 35px;
-	padding: 10px;
+	padding: 10px 0;
 	font-size: 11px;
 	font-weight: 400;
 	justify-content: space-around;
@@ -175,7 +175,8 @@ body {
 
 #galery__section {
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 1fr;
 	column-gap: 10px;
 	margin-top: 10px;
 	width: 100%;

@@ -1,103 +1,94 @@
+const container = $("#compra-pay__container");
+
 let eventoSeleccionado = null;
+let stockEventos = [];
+let entradas;
+let contenedorDeCompra;
+
+$(document).ready(() => {
+	cargarEvento();
+});
 
 function cargarEvento() {
-  let paramsString = location.search;
-  let searchParams = new URLSearchParams(paramsString);
-  let idEvento = searchParams.get("id");
-  if (!idEvento) return (window.location.href = "index.html");
-  obtenerEventoPorId(idEvento);
+	let paramsString = location.search;
+	let searchParams = new URLSearchParams(paramsString);
+	let idEvento = searchParams.get("id");
+	if (!idEvento) return (window.location.href = "index.html");
+	obtenerEventoPorId(idEvento);
 }
 
-function obtenerEventoPorId(id) {
-  let eventos = JSON.parse(localStorage.getItem("eventos"));
-  const eventoEntrada = eventos.find((evento) => {
-    return String(evento.id) === id;
-  });
+async function getJSONEntradas() {
+	await $.getJSON("../data/entradas.json", function (data) {
+		stockEventos = [...data];
+	});
+	return stockEventos;
+}
 
-  if (eventoEntrada) cargarDetalleEvento(eventoEntrada);
+async function obtenerEventoPorId(id) {
+	let eventos = await getJSONEntradas();
+	const eventoEntrada = eventos.find((evento) => {
+		return String(evento.id) === id;
+	});
+
+	if (eventoEntrada) cargarDetalleEvento(eventoEntrada);
 }
 
 function cargarDetalleEvento(evento) {
-  const contenedorPrincipal = $("#detalle_evento_nombre");
-  const contenedorSecundario = $("#detalle_evento_ubicacion");
-  contenedorPrincipal.innerHTML = "";
+	const contenedorPrincipal = $("#compra-info__container");
+	const contenedorSecundario = $("#info-container");
+	contenedorPrincipal.innerHTML = "";
 
-  contenedorPrincipal.append(`
-  <div class="img-event_container">
-    <img class="img-event" src="${evento.imagen}">
-  </div>
-  <div class=""info-general_container"">
-    <h2 class="titulo-entrada">
-        ${evento.nombre}
-    </h2>
-    <h3 class="fecha-entrada">
-        ${evento.fechaInicio} | ${evento.horario}
-    </h3>
-  </div>
+	contenedorPrincipal.prepend(`
+      <div id="img-container">
+			  <img src="${evento.imagen2}" alt="" id="img-item" />
+		  </div>
+  `);
+	contenedorSecundario.append(`
+      <div id="tittle__container">
+        <h2 id="tittle-item">${evento.nombre}</h2>
+        <p id="tittle-info__item">${evento.fechaInicio} | ${evento.horario}</p>
+      </div>    
   `);
 
-  contenedorPrincipal.append(contenedorSecundario);
-
-  for (const ubicaciones of evento.entradas) {
-    contenedorSecundario.append(`
-        <div class="sector_container">
-            <p>Sector: ${ubicaciones.nombreZona}.</p>                
-            <p>Disponibles: ${ubicaciones.stock}</p>
-            <p>Precio: $ ${ubicaciones.precio}</p>           
+	for (const ubicaciones of evento.entradas) {
+		let id = `${ubicaciones.idZona}`;
+		contenedorSecundario.append(`
+          <div id="sector__container">
+          <div class="sector-item">
+            <div class="sector-item__container">
+              <h3 class="item-name">${ubicaciones.nombreZona}</h3>
+              <p class="item-units">Disponibles: ${ubicaciones.stock}u</p>
+              <p class="item-price">$${ubicaciones.precio}</p>
+            </div>
+            <form onsubmit="event.preventDefault()" class="sector-input__container">
+              <p id="item-stock-${id}" class="stock-display" >NO HAY DISPONIBLES.</p>
+			  <div id="sector-item__container-${id}">
+              	<label for="cantidad">Cantidad:</label>
+              	<input class="item-selection-${id} item-selection" type="text" />
+              	<button class="item-button-${id} item-button">
+                	Agregar
+              	</button>
+			  </div>
+              <p class="item-error-${id} item-selection-error">Valor ingresado incorrecto.</p>
+            </form>
+          </div>
         </div>
-    `);
-  }
+    	`);
+		$($(`.item-button-${id}`)).on("click", () => {
+			contenedorDeCompra = $("#compra-pay__container").children();
+			if (contenedorDeCompra.length <= 0) {
+				addToCart(
+					`${ubicaciones.nombreZona}`,
+					`${ubicaciones.precio}`,
+					$(`.item-selection-${id}`).val(),
+					$(`.item-error-${id}`)
+				);
+			} else {
+				showMessage();
+			}
+			$(`.item-selection-${id}`).val("");
+		});
+
+		hideForm(id, `${ubicaciones.stock}`);
+	}
 }
-
-// function cargarDetalleEvento(evento) {
-//   const detalleEvento = document.getElementById("detalle_evento_nombre");
-//   const ubicacionesDeEvento = document.getElementById(
-//     "detalle_evento_ubicacion"
-//   );
-
-//   detalleEvento.innerHTML = "";
-
-//   const imgContenedor = document.createElement("div");
-//   imgContenedor.classList.add("img-event_container");
-
-//   const imgEvento = document.createElement("img");
-//   imgEvento.classList.add("img-event");
-//   imgEvento.src = evento.imagen;
-
-//   const infoContenedor = document.createElement("div");
-//   infoContenedor.classList.add("info-general_container");
-
-//   const tituloEvento = document.createElement("h2");
-//   tituloEvento.classList.add("titulo-entrada");
-//   tituloEvento.textContent = evento.nombre;
-
-//   const fechaEvento = document.createElement("h3");
-//   fechaEvento.classList.add("fecha-entrada");
-//   fechaEvento.textContent = `${evento.fechaInicio} | ${evento.horario}`;
-
-//   detalleEvento.appendChild(imgContenedor);
-//   imgContenedor.appendChild(imgEvento);
-//   detalleEvento.appendChild(infoContenedor);
-//   infoContenedor.appendChild(tituloEvento);
-//   infoContenedor.appendChild(fechaEvento);
-
-//   for (const ubicaciones of evento.entradas) {
-//     const contenedorDeSectores = document.createElement("div");
-//     const sectorDelEstadio = document.createElement("p");
-//     sectorDelEstadio.classList.add("nombre-sector");
-//     sectorDelEstadio.textContent = ubicaciones.nombreZona;
-
-//     /* detalleEvento.innerHTML += `
-//           <div>
-//             <p class="ubicacion-evento">${ubicaciones.nombreZona}</p>
-//             <p class="precio-evento">$${ubicaciones.precio}</p>
-//             <p class="stock-evento">Disponibles: ${ubicaciones.stock}</p>
-//           </div>
-//         `; */
-//     detalleEvento.appendChild(ubicacionesDeEvento);
-//     ubicacionesDeEvento.appendChild(contenedorDeSectores);
-//     contenedorDeSectores.appendChild(sectorDelEstadio);
-//   }
-// }
-
-cargarEvento();
