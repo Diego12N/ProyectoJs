@@ -7,13 +7,13 @@ body {
 	flex-flow: column;
 	align-items: center;
 	width: 100%;
-	height: 600px;
 }
 
 .sale-section_container {
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	margin-bottom: 30px;
 }
 
 #compra-info__container {
@@ -149,4 +149,115 @@ body {
 
 .btn-display {
 	display: flex;
+}
+
+/* TABLA DE CONFIRMACION */
+
+#compra-confirm__container {
+	display: none;
+	width: 60%;
+	margin-bottom: 50px;
+	box-shadow: 5px 5px 15px #ccc;
+}
+
+#table-confirm__container,
+#table-form {
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	margin: 30px 30px;
+}
+
+#table-form {
+	width: 30%;
+}
+
+#table-confirm__container {
+	margin-left: 30px;
+	align-items: flex-end;
+}
+
+#table-body {
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	align-items: flex-end;
+	margin-bottom: 10px;
+}
+
+.table-total {
+	margin-top: 5px;
+}
+
+#table-form {
+	justify-content: center;
+}
+
+#btn-container {
+	display: flex;
+}
+
+#btn-buy,
+#btn-back {
+	min-width: 100px;
+	max-width: 100px;
+}
+
+#table-headboard {
+	font-weight: 600;
+	border-bottom: 1px solid #000;
+}
+
+#table-headboard,
+.table-body__section {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	width: max-content;
+}
+
+.table-body__section {
+	font-size: 12px;
+	margin: 10px 0 5px 0;
+	box-shadow: 0px 2px 10px #ccc;
+	position: relative;
+}
+
+.table-headboard__item,
+.table-cell {
+	text-align: center;
+	min-width: 100px;
+	max-width: 100px;
+	margin: 0 20px;
+}
+
+.table-cell {
+	display: flex;
+	align-items: center;
+	min-height: 30px;
+}
+
+.table-cell p {
+	width: 100%;
+}
+
+#table-form div {
+	display: inline-block;
+}
+
+.btn-remove {
+	display: flex;
+	align-items: center;
+}
+
+.icon-position {
+	font-size: 14px;
+	padding-top: 2px;
+	position: absolute;
+	right: 15px;
+	color: #ff0000;
+}
+
+.icon-position:hover {
+	cursor: pointer;
 }

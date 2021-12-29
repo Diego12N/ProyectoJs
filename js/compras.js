@@ -74,12 +74,13 @@ function cargarDetalleEvento(evento) {
           </div>
         </div>
     	`);
+
 		$($(`.item-button-${id}`)).on("click", () => {
 			contenedorDeCompra = $("#compra-pay__container").children();
+			console.log(contenedorDeCompra);
 			if (contenedorDeCompra.length <= 0) {
-				addToCart(
-					`${ubicaciones.nombreZona}`,
-					`${ubicaciones.precio}`,
+				selectEvent(
+					ubicaciones,
 					$(`.item-selection-${id}`).val(),
 					$(`.item-error-${id}`)
 				);

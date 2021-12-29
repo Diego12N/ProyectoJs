@@ -59,6 +59,7 @@ guardarEventosLocalStorage(listaDeEventos);
 
 //DOM
 let contenidoDeEventos = $("#section-item__container");
+let windowLocation;
 
 $(document).ready(() => {
 	mostrarEventos();

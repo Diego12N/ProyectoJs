@@ -45,6 +45,33 @@
 				<!-- ENTRADAS SELECCIONADAS -->
 				<div id="compra-pay__container"></div>
 			</section>
+			<section id="compra-confirm__container">
+				<div id="table-confirm__container">
+					<div id="table-headboard">
+						<div class="table-headboard__item">Ubicación</div>
+						<div class="table-headboard__item">Cantidad</div>
+						<div class="table-headboard__item">Precio</div>
+					</div>
+					<div id="table-body"></div>
+					<div class="table-body__section table-total">
+						<div class="table-cell"><p>TOTAL</p></div>
+						<div class="table-cell"><p id="total-cell"></p></div>
+					</div>
+				</div>
+				<form action="" id="table-form" onsubmit="event.preventDefault()">
+					<div>
+						<label for="">Ingresa tu E-mail</label> <input type="text" />
+					</div>
+					<div>
+						<label for="">Ingresa tu telefono</label> <input type="numb" />
+					</div>
+					<div id="btn-container">
+						<button id="btn-back">Volver atras</button>
+						<button id="btn-buy">COMPRAR</button>
+					</div>
+				</form>
+			</section>
+			<section id="section-ticket"></section>
 			<!-- <div class="btn-pay__container"><button>FINALIZAR COMPRA</button></div> -->
 		</main>
 		<footer id="footer_container">
@@ -67,6 +94,8 @@
 			</p>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/array.js"></script>
+		<script src="js/class.js"></script>
 		<script src="./js/compras.js"></script>
 		<script src="./js/compras-secundario.js"></script>
 	</body>
