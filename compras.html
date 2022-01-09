@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/compras.css" />
 		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/formulario_de_compra.css" />
+		<link rel="stylesheet" href="css/modal.css" />
 		<script
 			src="https://kit.fontawesome.com/8c698dc94c.js"
 			crossorigin="anonymous"
@@ -29,7 +31,8 @@
 					<ul class="navbar-container">
 						<li>
 							<a href="index.html" class="navbar-item navbar-item_home"
-								>VOLVER AL INICIO
+								><i class="fas fa-angle-left"></i>
+								<p>VOLVER AL INICIO</p>
 							</a>
 						</li>
 					</ul>
@@ -43,10 +46,11 @@
 					<div id="info-container"></div>
 				</div>
 				<!-- ENTRADAS SELECCIONADAS -->
-				<div id="compra-pay__container"></div>
+				<div id="compra-check__container"></div>
 			</section>
 			<section id="compra-confirm__container">
-				<div id="table-confirm__container">
+				<div id="table-confirm__container" class="compra-confirm_section">
+					<h2 class="table-confirm__tittle">ENTRADAS SELECCIONADAS</h2>
 					<div id="table-headboard">
 						<div class="table-headboard__item">Ubicación</div>
 						<div class="table-headboard__item">Cantidad</div>
@@ -58,20 +62,87 @@
 						<div class="table-cell"><p id="total-cell"></p></div>
 					</div>
 				</div>
-				<form action="" id="table-form" onsubmit="event.preventDefault()">
-					<div>
-						<label for="">Ingresa tu E-mail</label> <input type="text" />
+				<form
+					action=""
+					id="table-form"
+					class="compra-confirm_section"
+					onsubmit="event.preventDefault()"
+				>
+					<h2 class="table-confirm__tittle">FORMULARIO DE COMPRA</h2>
+					<div class="item-form">
+						<label class="item-form__tittle" for=""
+							>Ingresa tu nombre completo</label
+						>
+						<input
+							id="user-name"
+							class="input-form"
+							type="text"
+							name="fullName"
+							placeholder="Manuel Garcia"
+						/>
+						<p id="input-name_error" class="mensaje-error">
+							El nombre tiene que ser de 4 a 40 dígitos y solo puede contener
+							letras.
+						</p>
 					</div>
-					<div>
-						<label for="">Ingresa tu telefono</label> <input type="numb" />
+					<div class="item-form">
+						<label class="item-form__tittle" for="">Ingresa tu E-mail</label>
+						<input
+							id="user-mail"
+							class="input-form"
+							type="text"
+							name="email"
+							placeholder="correo@correo.com"
+						/>
+						<p id="input-mail_error" class="mensaje-error">
+							El correo solo puede contener letras, numeros, puntos, guiones y
+							guion bajo.
+						</p>
 					</div>
+					<div class="item-form">
+						<label class="item-form__tittle" for="">Ingresa tu telefono</label>
+						<input
+							id="user-number"
+							class="input-form"
+							type="numb"
+							name="phoneNumber"
+							placeholder="3514852694"
+						/>
+						<p id="input-number_error" class="mensaje-error">
+							El telefono solo puede contener numeros con un maximo de 10
+							dígitos.
+						</p>
+					</div>
+					<p id="table-form__error">
+						<i class="fas fa-exclamation-circle"></i>
+						<b>Error:</b> Por favor rellena el formulario correctamente.
+					</p>
 					<div id="btn-container">
-						<button id="btn-back">Volver atras</button>
-						<button id="btn-buy">COMPRAR</button>
+						<button id="btn-buy">
+							<p>CONFIRMAR COMPRA</p>
+						</button>
 					</div>
 				</form>
 			</section>
-			<section id="section-ticket"></section>
+			<div class="modal">
+				<div id="modal__container">
+					<div class="modal-item">
+						<p class="modal-tittle">COMPRA CONFIRMADA</p>
+					</div>
+					<div id="modal__content">
+						<p id="modal-user__name"></p>
+						<p id="modal-email__content">
+							Hemos enviado tus entradas al correo:
+							<br />
+							<b id="modal-user__email"></b>
+						</p>
+						<p id="modal-user__phoneNumber"></p>
+						<p><b style="font-size: 18px"> Muchas gracias por tu compra!</b></p>
+						<img id="modal-logotipo" src="img/logotipo.svg" alt="" />
+						<button id="modal__btn" type="submit">Cerrar</button>
+					</div>
+				</div>
+			</div>
 			<!-- <div class="btn-pay__container"><button>FINALIZAR COMPRA</button></div> -->
 		</main>
 		<footer id="footer_container">
@@ -98,5 +169,6 @@
 		<script src="js/class.js"></script>
 		<script src="./js/compras.js"></script>
 		<script src="./js/compras-secundario.js"></script>
+		<script src="./js/formulario.js"></script>
 	</body>
 </html>

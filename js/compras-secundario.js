@@ -2,13 +2,14 @@ let totalAPagar = 0;
 let buyArray = [];
 const etiquetaTotal = $("#total-cell");
 const buyContainer = $("#compra-confirm__container");
+const tableBody = $("#table-body");
 let listaDeEntradaSeleccionada = [];
 
 $(document).ready(() => {
 	let getLocalStorageElement = JSON.parse(localStorage.getItem("section"));
 
 	if (getLocalStorageElement != null) {
-		listaDeEntradaSeleccionada = getLocalStorageElement;
+		/* listaDeEntradaSeleccionada = getLocalStorageElement; */
 		getLocalStorageElement.forEach((element) => {
 			addtoCart(element.id, element.name, element.amount, element.price);
 		});
@@ -28,13 +29,17 @@ function selectEvent(ubicaciones, value, error) {
 		cantidadEntradas != 0
 	) {
 		container.append(`
-			<h2 id="compra-name">${ubicacionEntrada}</h2>
-			<p>Cantidad de Entradas</p>
-			<p id="compra-unit">${cantidadEntradas}</p>
-			<h3>Total</h3>
-			<p id="compra-price">$${precioEntradas}</p>
-			<button id="btn-continuar">CONTIUAR</button>
-			<button id="btn-eliminar">ELIMINAR</button>
+		<div id="compra-check__content">
+			<div id="compra-check__info"> 
+				<p id="compra-unit" class="compra-item">${cantidadEntradas} Entradas</p>
+				<p id="compra-name" class="compra-item">${ubicacionEntrada}</p>		
+				<p id="compra-price" class="compra-item">Total $${precioEntradas}</p>			
+			</div>
+			<div id="btn-check__container">
+				<button id="btn-eliminar" class="btn-check__style">ELIMINAR</button>
+				<button id="btn-continuar" class="btn-check__style">CONTIUAR</button>
+			</div>
+		</div>	
 		
 		`);
 	} else {
@@ -76,7 +81,7 @@ function verificarSiExisteEntrada(id) {
 
 function addtoCart(id, name, amount, price) {
 	listaDeEntradaSeleccionada.push(new BuyObject(id, name, amount, price));
-	$("#table-body").append(
+	tableBody.append(
 		`<div id="table-section__item-${id}" class="table-body__section">
 				<div id="table-location${id}" class="table-cell">
 					<p>${name}</p>
@@ -91,7 +96,7 @@ function addtoCart(id, name, amount, price) {
 
 	showCardSelection();
 
-	removeAllCart($("#table-body"));
+	/* removeAllCart($("#table-body")); */
 
 	removeSectionCart($(`#btn-remove-${id}`), price, id);
 }
@@ -109,7 +114,7 @@ function showCardSelection() {
 	buyContainer.css("display", "flex");
 }
 
-function removeAllCart(container) {
+/* function removeAllCart(container) {
 	const btnBack = $("#btn-back");
 
 	btnBack.on("click", () => {
@@ -118,7 +123,7 @@ function removeAllCart(container) {
 		localStorage.clear();
 		container.html("");
 	});
-}
+} */
 
 function removeSectionCart(section, price, id) {
 	section.on("click", (e) => {

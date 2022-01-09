@@ -1,51 +1,57 @@
 #footer_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  text-align: center;
-  height: 125px;
-  background: linear-gradient(to bottom, #a80f71 70%, #880c5a);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+	min-height: 125px;
+	background: linear-gradient(to bottom, #a80f71 70%, #880c5a);
+	position: static;
+	bottom: 0;
 }
 
 #footer-item {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  width: 20%;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 auto;
+	width: 20%;
 }
 
 #footer-item p {
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
+	font-size: 30px;
+	font-weight: 700;
+	color: #fff;
 }
 
 #footer-logotipe_item {
-  height: 100%;
+	height: 100%;
 }
 
 #footer-first_childe {
-  display: flex;
-  width: 30%;
-  justify-content: space-around;
-  align-items: center;
+	display: flex;
+	width: 30%;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .fa-instagram,
 .fa-facebook,
 #footer-copyright {
-  color: #fff;
+	color: #fff;
+}
+
+#footer-copyright {
+	font-size: 12px;
 }
 
 #footer-copyright a {
-  color: #fff;
+	color: #fff;
 }
 .fa-instagram,
 .fa-facebook {
-  vertical-align: text-top;
-  font-size: 24px;
+	vertical-align: text-top;
+	font-size: 24px;
 }
 
 .fa-instagram {
-  font-size: 26px;
+	font-size: 26px;
 }

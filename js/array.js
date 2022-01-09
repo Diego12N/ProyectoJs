@@ -83,6 +83,7 @@ function mostrarEventos() {
 		$(`#first-btn${evento.id}`).click(() => {
 			if (!validarStock(evento.entradas)) return;
 			window.location.href = `compras.html?id=${evento.id}`;
+			localStorage.clear();
 			obtenerDetalleEvento(evento.id);
 		});
 

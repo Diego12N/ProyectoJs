@@ -1,9 +1,10 @@
-const container = $("#compra-pay__container");
+const container = $("#compra-check__container");
 
 let eventoSeleccionado = null;
 let stockEventos = [];
 let entradas;
 let contenedorDeCompra;
+let idEvento;
 
 $(document).ready(() => {
 	cargarEvento();
@@ -12,7 +13,7 @@ $(document).ready(() => {
 function cargarEvento() {
 	let paramsString = location.search;
 	let searchParams = new URLSearchParams(paramsString);
-	let idEvento = searchParams.get("id");
+	idEvento = searchParams.get("id");
 	if (!idEvento) return (window.location.href = "index.html");
 	obtenerEventoPorId(idEvento);
 }
@@ -61,7 +62,7 @@ function cargarDetalleEvento(evento) {
               <p class="item-price">$${ubicaciones.precio}</p>
             </div>
             <form onsubmit="event.preventDefault()" class="sector-input__container">
-              <p id="item-stock-${id}" class="stock-display" >NO HAY DISPONIBLES.</p>
+              <p id="item-stock-${id}" class="stock-display">NO HAY DISPONIBLES.</p>
 			  <div id="sector-item__container-${id}">
               	<label for="cantidad">Cantidad:</label>
               	<input class="item-selection-${id} item-selection" type="text" />
@@ -76,8 +77,7 @@ function cargarDetalleEvento(evento) {
     	`);
 
 		$($(`.item-button-${id}`)).on("click", () => {
-			contenedorDeCompra = $("#compra-pay__container").children();
-			console.log(contenedorDeCompra);
+			contenedorDeCompra = $("#compra-check__container").children();
 			if (contenedorDeCompra.length <= 0) {
 				selectEvent(
 					ubicaciones,

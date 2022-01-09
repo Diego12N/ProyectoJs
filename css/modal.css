@@ -1,0 +1,93 @@
+.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 100;
+	transform: scale(0);
+	transition: all 0.3;
+}
+
+#modal__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 25%;
+	background-color: #fff;
+	opacity: 100%;
+	box-shadow: 0px 0px 50px 10px rgb(29, 29, 29);
+}
+
+.modal-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: #a81672;
+	height: 80px;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 800;
+}
+
+.modal-show {
+	transform: scale(1);
+}
+
+#modal-logotipo {
+	width: 25%;
+}
+
+#modal__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 14px;
+	padding: 2rem;
+}
+
+#modal-user__name {
+	font-size: 20px;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 10px;
+}
+
+#modal-email__content {
+	text-transform: uppercase;
+	width: 90%;
+	padding: 20px 0;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+}
+
+#modal-user__email {
+	font-size: 16px;
+	text-transform: lowercase;
+	color: #572671;
+}
+
+#modal-user__phoneNumber {
+	width: 90%;
+	padding: 20px 0;
+}
+
+#modal-logotipo {
+	margin: 25px;
+	width: 35%;
+}
+
+#modal__btn {
+	width: 25%;
+	height: 40px;
+	text-transform: uppercase;
+}

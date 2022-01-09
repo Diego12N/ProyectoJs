@@ -1,0 +1,107 @@
+#table-form {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: #e5e5e5;
+	width: 50%;
+	gap: 20px;
+}
+
+.item-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+}
+
+.item-form__tittle {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.input-form {
+	padding: 10px 15px;
+	width: 100%;
+	min-width: 200px;
+	border: none;
+}
+
+.input-form::placeholder {
+	color: #cacaca;
+}
+
+.input-form::selection {
+	background: #556677;
+	color: #fff;
+}
+
+.input-form:focus {
+	border: 3px solid #0075ff;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+#table-form__error {
+	display: none;
+	background-color: #f66060;
+	padding: 10px 15px;
+	border-radius: 5px;
+	font-size: 14px;
+	width: 100%;
+	text-align: center;
+}
+
+#btn-buy,
+#modal__btn {
+	font-weight: 800;
+	width: max-content;
+	height: 6vh;
+	background-color: #556677;
+	color: #fff;
+	border: none;
+	padding: 5px 15px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.5;
+}
+
+#btn-buy:hover {
+	background-color: #72889e;
+}
+
+#btn-buy:active {
+	transform: scale(95%);
+}
+
+/* .input-form:focus {
+	border: 3px solid #0075ff;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+ */
+.campo-valido:focus {
+	border: 3px solid #1ed12d;
+}
+
+.campo-invalido:focus {
+	border: 3px solid #bb2929;
+}
+
+.mensaje-error {
+	display: none;
+	font-size: 12px;
+	color: #f66060;
+}
+
+.ocultar-error {
+	display: none;
+}
+
+.mostrar-error {
+	display: flex;
+}
+
+#btn-container {
+	display: flex;
+	margin-top: 30px;
+}
