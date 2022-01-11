@@ -96,8 +96,6 @@ function addtoCart(id, name, amount, price) {
 
 	showCardSelection();
 
-	/* removeAllCart($("#table-body")); */
-
 	removeSectionCart($(`#btn-remove-${id}`), price, id);
 }
 

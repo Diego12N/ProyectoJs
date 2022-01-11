@@ -29,6 +29,7 @@
 		"fechaInicio": "16/02/2022",
 		"horario": "20:30hs",
 		"imagen": "./img/AbelPintos1.jpg",
+		"imagen2": "./img/abel2.jpg",
 		"entradas": [
 			{
 				"idZona": 1,

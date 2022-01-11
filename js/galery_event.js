@@ -1,27 +1,27 @@
 const galery = [
 	{
 		id: 1,
-		url: "../img/Galery/galery_img-1.jpg",
+		url: "./img/Galery/galery_img-1.jpg",
 	},
 	{
 		id: 2,
-		url: "../img/Galery/galery_img-2.jpg",
+		url: "./img/Galery/galery_img-2.jpg",
 	},
 	{
 		id: 3,
-		url: "../img/Galery/galery_img-3.jpg",
+		url: "./img/Galery/galery_img-3.jpg",
 	},
 	{
 		id: 4,
-		url: "../img/Galery/galery_img-4.jpg",
+		url: "./img/Galery/galery_img-4.jpg",
 	},
 	{
 		id: 5,
-		url: "../img/Galery/galery_img-5.jpg",
+		url: "./img/Galery/galery_img-5.jpg",
 	},
 	{
 		id: 6,
-		url: "../img/Galery/galery_img-6.jpg",
+		url: "./img/Galery/galery_img-6.jpg",
 	},
 ];
 

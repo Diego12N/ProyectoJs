@@ -33,6 +33,7 @@ let listaDeEventos = [
 		fechaInicio: "16/02/2022",
 		horario: "20:30hs",
 		imagen: "./img/AbelPintos1.jpg",
+		imagen2: "./img/abel2.jpg",
 		entradas: [
 			new Entrada(1, "Tribunas laterales", 850, 0),
 			new Entrada(2, "Tribunas central", 1500, 0),
