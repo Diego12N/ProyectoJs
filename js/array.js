@@ -16,9 +16,10 @@ let listaDeEventos = [
 	{
 		id: 1,
 		nombre: "LUCIANO PEREYRA",
-		fechaInicio: "08/12/2021",
+		fechaInicio: "08/02/2022",
 		horario: "19:45hs",
 		imagen: "./img/Lpereyra1.jpg",
+		imagen2: "./img/lucianoPereyra2.jpg",
 		entradas: [
 			new Entrada(1, "Tribunas laterales", 800, 2500),
 			new Entrada(2, "Tribunas central", 1200, 1000),
@@ -29,7 +30,7 @@ let listaDeEventos = [
 	{
 		id: 2,
 		nombre: "ABEL PINTOS",
-		fechaInicio: "16/12/2021",
+		fechaInicio: "16/02/2022",
 		horario: "20:30hs",
 		imagen: "./img/AbelPintos1.jpg",
 		entradas: [
@@ -42,7 +43,7 @@ let listaDeEventos = [
 	{
 		id: 3,
 		nombre: "PAULO LONDRA",
-		fechaInicio: "28/12/2021",
+		fechaInicio: "28/02/2022",
 		horario: "21:15hs",
 		imagen: "./img/Plondra1.jpg",
 		imagen2: "./img/pauloLondra2.jpg",
@@ -58,7 +59,7 @@ let listaDeEventos = [
 guardarEventosLocalStorage(listaDeEventos);
 
 //DOM
-let contenidoDeEventos = $("#section-item__container");
+let contenidoDeEventos = $("#section-item");
 let windowLocation;
 
 $(document).ready(() => {

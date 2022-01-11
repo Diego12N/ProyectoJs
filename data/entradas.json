@@ -2,9 +2,10 @@
 	{
 		"id": 1,
 		"nombre": "LUCIANO PEREYRA",
-		"fechaInicio": "08/12/2021",
+		"fechaInicio": "08/02/2022",
 		"horario": "19:45hs",
 		"imagen": "./img/Lpereyra1.jpg",
+		"imagen2": "./img/lucianoPereyra2.jpg",
 		"entradas": [
 			{
 				"idZona": 1,
@@ -25,7 +26,7 @@
 	{
 		"id": 2,
 		"nombre": "ABEL PINTOS",
-		"fechaInicio": "16/12/2021",
+		"fechaInicio": "16/02/2022",
 		"horario": "20:30hs",
 		"imagen": "./img/AbelPintos1.jpg",
 		"entradas": [
@@ -48,7 +49,7 @@
 	{
 		"id": 3,
 		"nombre": "PAULO LONDRA",
-		"fechaInicio": "28/12/2021",
+		"fechaInicio": "28/02/2022",
 		"horario": "21:15hs",
 		"imagen": "./img/Plondra1.jpg",
 		"imagen2": "./img/pauloLondra2.jpg",

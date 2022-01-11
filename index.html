@@ -29,14 +29,14 @@
 				<nav class="navbar">
 					<ul class="navbar-container">
 						<li>
-							<a href="#service_tittle" class="navbar-item">SERVICIOS</a>
+							<a href="#article-service" class="navbar-item">SERVICIOS</a>
 						</li>
 						<li>
-							<a href="#event_tittle" class="navbar-item">EVENTOS</a>
+							<a href="#article-event" class="navbar-item">EVENTOS</a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="#seccion_formulario" class="navbar-item">CONTACTO</a>
-						</li>
+						</li> -->
 					</ul>
 				</nav>
 			</div>
@@ -49,50 +49,65 @@
 			</section>
 			<section id="galery__section"></section>
 			<section class="section-container bkg-section__container">
-				<article id="article-container" class="article-container">
-					<h2 id="service_tittle">NUESTROS SERVICIOS</h2>
+				<article id="article-service" class="article-container">
 					<div class="service__container">
-						<div class="item__container tittle-color-A">
-							<div class="img__container">
-								<img src="icons/compraOnline.svg" alt="" class="img-item" />
+						<h2 class="service_tittle">
+							NUESTROS
+							<br />
+							<b>SERVICIOS</b>
+						</h2>
+						<div class="service-card">
+							<div class="item__container">
+								<div class="img__container">
+									<img src="icons/compraOnline.svg" alt="" class="img-item" />
+								</div>
+								<div>
+									<p class="item__tittle">Compras Online</p>
+									<p class="item__content">
+										Compra entradas para tu evento favorito desde la comodidad
+										de tu casa. Recibirás en tu correo las entradas que
+										elegieras y podras presentarlas mediante un código QR.
+									</p>
+								</div>
 							</div>
-							<div>
-								<p class="item__tittle">Compras Online</p>
+							<div class="item__container">
+								<div class="img__container">
+									<img src="icons/informacion.svg" alt="" class="img-item" />
+								</div>
+								<p class="item__tittle">Informacion de eventos</p>
 								<p class="item__content">
-									Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
-									cupiditate ut repellat sit dolor nulla labore illo autem eos
-									fugit ullam tempora.
+									Conoce a detalle toda la informacion de cada evento. De esta
+									forma buscamos que puedas comprar con seguridad la entrada del
+									evento que estas buscando conociendo su precio y
+									disponibilidad.
+								</p>
+							</div>
+							<div class="item__container">
+								<div class="img__container">
+									<img src="icons/bonificaciones.svg" alt="" class="img-item" />
+								</div>
+								<p class="item__tittle">Bonificaciones</p>
+								<p class="item__content">
+									En CordobaEventos premiamos a nuestros clientes, realizando
+									sorteos a travez de nuestras redes y tambien realizamos
+									colaboraciones con otras empresas para conseguir las mejores
+									bonificaciones.
 								</p>
 							</div>
 						</div>
-						<div class="item__container tittle-color-B">
-							<div class="img__container">
-								<img src="icons/informacion.svg" alt="" class="img-item" />
-							</div>
-							<p class="item__tittle">Informacion de eventos</p>
-							<p class="item__content">
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
-								cupiditate ut repellat sit dolor nulla labore illo autem eos
-								fugit ullam tempora.
-							</p>
-						</div>
-						<div class="item__container tittle-color-C">
-							<div class="img__container">
-								<img src="icons/bonificaciones.svg" alt="" class="img-item" />
-							</div>
-							<p class="item__tittle">Bonificaciones</p>
-							<p class="item__content">
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga
-								cupiditate ut repellat sit dolor nulla labore illo autem eos
-								fugit ullam tempora.
-							</p>
-						</div>
 					</div>
 				</article>
-
-				<article class="article-container">
-					<h2 id="event_tittle">EVENTOS EN DICIEMBRE</h2>
-					<div id="section-item__container"></div>
+				<article id="article-event" class="article-container">
+					<div id="section-item__container">
+						<div class="service__container">
+							<h2 class="service_tittle">
+								EVENTOS EN
+								<br />
+								<b>FEBRERO</b>
+							</h2>
+							<div id="section-item" class="service-card"></div>
+						</div>
+					</div>
 				</article>
 				<article class="sale-section_container">
 					<div id="evento_section">
@@ -102,7 +117,7 @@
 			</section>
 		</main>
 
-		<form action="" id="seccion_formulario" class="article-container">
+		<!-- <form action="" id="seccion_formulario" class="article-container">
 			<h2 class="form-tittle">CONTACTO</h2>
 			<div class="form-container">
 				<label for="fullname" class="input-tittle">Nombre y apellido</label>
@@ -119,7 +134,7 @@
 				></textarea>
 				<button class="form-button">ENVIAR</button>
 			</div>
-		</form>
+		</form> -->
 		<footer id="footer_container">
 			<div id="footer-item">
 				<a href="index.html" id="footer-logotipe"
@@ -141,6 +156,6 @@
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="./js/array.js"></script>
-		<script src="js/galery_event.js"></script>
+		<script src="./js/galery_event.js"></script>
 	</body>
 </html>

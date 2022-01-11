@@ -4,7 +4,8 @@
 	justify-content: space-evenly;
 	text-align: center;
 	min-height: 125px;
-	background: linear-gradient(to bottom, #a80f71 70%, #880c5a);
+	/* background: linear-gradient(to bottom, #a80f71 70%, #880c5a); */
+	background: #111014;
 	position: static;
 	bottom: 0;
 }

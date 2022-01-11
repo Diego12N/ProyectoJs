@@ -37,13 +37,16 @@ async function obtenerEventoPorId(id) {
 function cargarDetalleEvento(evento) {
 	const contenedorPrincipal = $("#compra-info__container");
 	const contenedorSecundario = $("#info-container");
-	contenedorPrincipal.innerHTML = "";
+	/* contenedorPrincipal.innerHTML = ""; */
+	contenedorSecundario.empty();
+	$("#img-container").remove();
 
 	contenedorPrincipal.prepend(`
       <div id="img-container">
 			  <img src="${evento.imagen2}" alt="" id="img-item" />
 		  </div>
   `);
+
 	contenedorSecundario.append(`
       <div id="tittle__container">
         <h2 id="tittle-item">${evento.nombre}</h2>

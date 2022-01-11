@@ -3,23 +3,12 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#A81672;}
-	.st1{opacity:0.13;fill:#020203;}
-	.st2{fill:#FFFFFF;}
+	.st0{fill:#FFFFFF;}
 </style>
-<ellipse class="st0" cx="75" cy="74.16" rx="74" ry="73.84"/>
-<path class="st1" d="M118.56,14.14C12.64,9.6,9.16,106.81,9.13,107.52C3.93,97.42,1,85.97,1,73.84C1,33.06,34.13,0,75,0
-	C91.28,0,106.34,5.25,118.56,14.14z"/>
-<rect x="33.69" y="35.02" class="st2" width="25.13" height="83"/>
-<rect x="63.31" y="35.02" class="st2" width="25.13" height="83"/>
-<rect x="92.63" y="35.02" class="st2" width="25.13" height="83"/>
-<rect x="36.93" y="41.89" class="st0" width="18.65" height="3.58"/>
-<rect x="66.55" y="41.89" class="st0" width="18.65" height="3.58"/>
-<rect x="95.88" y="41.89" class="st0" width="18.65" height="3.58"/>
-<rect x="36.93" y="109.96" class="st0" width="18.65" height="3.58"/>
-<rect x="66.55" y="109.96" class="st0" width="18.65" height="3.58"/>
-<rect x="95.88" y="109.96" class="st0" width="18.65" height="3.58"/>
-<rect x="36.93" y="103.69" class="st0" width="18.65" height="3.58"/>
-<rect x="66.55" y="103.69" class="st0" width="18.65" height="3.58"/>
-<rect x="95.88" y="103.69" class="st0" width="18.65" height="3.58"/>
+<path class="st0" d="M23.5,25v102.7h31.1V25H23.5z M50.6,122.1H27.5v-4.4h23.1V122.1z M50.6,114.4H27.5v-4.4h23.1V114.4z M50.6,37.9
+	H27.5v-4.4h23.1V37.9z"/>
+<path class="st0" d="M60.2,25v102.7h31.1V25H60.2z M87.2,122.1H64.2v-4.4h23.1V122.1z M87.2,114.4H64.2v-4.4h23.1V114.4z M87.2,37.9
+	H64.2v-4.4h23.1V37.9z"/>
+<path class="st0" d="M96.4,25v102.7h31.1V25H96.4z M123.5,122.1h-23.1v-4.4h23.1V122.1z M123.5,114.4h-23.1v-4.4h23.1V114.4z
+	 M123.5,37.9h-23.1v-4.4h23.1V37.9z"/>
 </svg>

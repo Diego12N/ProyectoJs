@@ -114,17 +114,6 @@ function showCardSelection() {
 	buyContainer.css("display", "flex");
 }
 
-/* function removeAllCart(container) {
-	const btnBack = $("#btn-back");
-
-	btnBack.on("click", () => {
-		totalAPagar = 0;
-		buyContainer.css("display", "none");
-		localStorage.clear();
-		container.html("");
-	});
-} */
-
 function removeSectionCart(section, price, id) {
 	section.on("click", (e) => {
 		e.target.parentNode.parentNode.remove();

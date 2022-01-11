@@ -55,8 +55,14 @@ for (const input of inputs) {
 }
 
 $("#btn-buy").on("click", () => {
-	showBuyDetails();
-	actualizarStockEntradas();
+	if (campos.name && campos.mail && campos.number) {
+		showBuyDetails();
+		actualizarStockEntradas();
+	} else {
+		$("#table-form__error").fadeIn("slow", function () {
+			$("#table-form__error").fadeOut(3000);
+		});
+	}
 });
 
 btnCloseModal.on("click", () => {
@@ -77,18 +83,12 @@ function showBuyDetails() {
 	let correo = $("#user-mail").val();
 	let telefono = $("#user-number").val();
 
-	if (campos.name && campos.mail && campos.number) {
-		$("#modal-user__name").html(`${nombre}`);
-		$("#modal-user__email").html(`${correo}`);
-		$("#modal-user__phoneNumber").html(
-			`Te estaremos notificando de las <br /> novedades del evento al ${telefono}.`
-		);
-		modalContainer.addClass("modal-show");
-	} else {
-		$("#table-form__error").fadeIn("slow", function () {
-			$("#table-form__error").fadeOut(3000);
-		});
-	}
+	$("#modal-user__name").html(`${nombre}`);
+	$("#modal-user__email").html(`${correo}`);
+	$("#modal-user__phoneNumber").html(
+		`Te estaremos notificando de las <br /> novedades del evento al ${telefono}.`
+	);
+	modalContainer.addClass("modal-show");
 }
 
 function limpiarMensajesDeError() {
@@ -123,9 +123,11 @@ function actualizarStockEntradas() {
 					entrada.stock -= entradaEncontrada.amount;
 				}
 			}
+			cargarDetalleEvento(evento);
 		}
 	});
 
+	console.log(getLocalStorageEventos);
 	let setItem = JSON.stringify(getLocalStorageEventos);
 	localStorage.setItem("eventos", setItem);
 }

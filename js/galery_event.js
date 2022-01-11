@@ -36,10 +36,6 @@ function showGalery() {
 		'<button id="galery_button-down"><i class="fas fa-chevron-down"></i></button> <button id="galery_button-up"><i class="fas fa-chevron-up"></i></button>'
 	);
 
-	$("#galery__section").css({
-		"background-color": "#000",
-	});
-
 	$("#galery_button-down").click(() => {
 		$("#galery_button-up").show();
 		$("#galery__section").slideDown();
@@ -54,14 +50,14 @@ function showGalery() {
 
 function showImg() {
 	galery.forEach((imagen) => {
-		let i = imagen.id;
+		let id = imagen.id;
 
 		$("#galery__section").append(
-			`<div id="galery-item-${i}"></div>
+			`<div id="galery-item-${id}"></div>
 			`
 		);
 
-		$(`#galery-item-${i}`).css({
+		$(`#galery-item-${id}`).css({
 			"background-image": `url(${imagen.url})`,
 			"background-size": "cover",
 			"background-position": "center",

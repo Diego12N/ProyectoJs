@@ -10,6 +10,7 @@ body {
 	margin: auto;
 	justify-content: space-between;
 	align-items: center;
+	/* background: #18171c; */
 }
 
 header {
@@ -79,12 +80,7 @@ body,
 
 #main-container {
 	width: 100%;
-}
-
-.section-container {
-	width: 60%;
-	margin-top: 50px;
-	margin: auto;
+	background: #111014;
 }
 
 /* BANNER SECTION  */
@@ -178,7 +174,8 @@ body,
 	box-sizing: unset;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 1fr;
-	padding-top: 10px;
+	padding-top: 5px;
+	background-color: #fff;
 	width: 100%;
 	height: 165px;
 }
@@ -189,79 +186,110 @@ body,
 
 /* CIERRE BANNER SECTION  */
 
+.section-container {
+	width: 100%;
+	gap: 100px;
+}
+
+#article-service {
+	margin-top: 100px;
+}
+
+#article-event {
+	background-image: url(/img/fondo2.jpg);
+	background-color: #111014;
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
 .article-container {
 	display: grid;
 	width: 100%;
 	text-align: center;
-	margin: 50px auto;
 	padding: 20px;
 }
 
-#service_tittle,
+#article-service {
+	display: flex;
+	justify-content: flex-end;
+	height: 550px;
+	background-image: url(/ai/fondos/luciano\ pereyra-fondo.jpg);
+	background-color: #18171c;
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.service_tittle,
 #event_tittle {
 	font-size: 20px;
 	color: #a80f71;
 }
 
-.img__container {
-	display: inline-block;
-	margin: 20px;
-	width: 50%;
+.service_tittle {
+	color: #fff;
+	font-size: 25px;
+	font-weight: 400;
+}
+
+.service_tittle b {
+	font-size: 35px;
 }
 
 .service__container {
+	flex-direction: column;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	width: 100%;
+	justify-content: center;
+	color: #fff;
+	gap: 20px;
+	width: 50%;
+	margin-right: 50px;
 }
 
-.tittle-color-A {
-	border: 3px solid #e793e0;
-}
-.tittle-color-B {
-	border: 3px solid #a81672;
-}
-.tittle-color-C {
-	border: 3px solid #f54670;
-}
-.article-container,
-.form-tittle {
-	padding: 10px;
+.service-card {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
 }
 
 #section-item__container,
 .item__container {
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	text-align: left;
+	justify-content: flex-end;
+	gap: 50px;
+	text-align: center;
+}
+
+#section-item__container {
+	margin-right: 50px;
+	align-items: center;
+	height: 550px;
+	color: #fff;
 }
 
 .item__container {
 	display: inline-block;
-	max-width: 240px;
+	max-width: 225px;
 	min-width: 150px;
-	padding: 10px;
-	margin-top: 30px;
-	text-align: center;
 	font-weight: 600;
-	box-shadow: 0px 0px 10px #000;
-	border-radius: 10px;
-	background-color: #fff;
 }
 
-.item__tittle {
-	padding: 10px;
-	background-color: #fff;
-	color: #572671;
+.img__container {
+	display: inline-block;
+	margin: 20px;
+	width: 35%;
 }
+
+/* .item__tittle {
+	padding: 10px;
+} */
 
 .item__content {
 	font-size: 12px;
 	font-weight: 400;
-	text-align: justify;
-	margin: 20px 10px;
-	margin-top: 0;
+	margin-top: 10px;
 }
 
 .evento-container {
@@ -269,9 +297,7 @@ body,
 	justify-content: center;
 	align-items: center;
 	font-size: 12px;
-	margin-top: 30px;
 	overflow: hidden;
-	box-shadow: 0 0 10px #777;
 	border-radius: 10px;
 }
 
@@ -280,7 +306,7 @@ body,
 	align-content: center;
 	justify-content: center;
 	width: 225px;
-	height: 400px;
+	height: 250px;
 	overflow: hidden;
 }
 
@@ -296,12 +322,10 @@ body,
 .titulo-evento {
 	margin-top: 20px;
 	margin-bottom: 3px;
-	color: #000;
 	font-size: 20px;
 }
 
 .fecha-evento {
-	color: #a80f71;
 	font-weight: 400;
 	margin-bottom: 20px;
 }
@@ -311,10 +335,9 @@ body,
 	align-items: center;
 	text-decoration: none;
 	width: 100%;
-	height: 15%;
+	min-height: 50px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-	font-weight: 800;
-	font-size: 15px;
+	font-size: 12px;
 	color: #fff;
 	background: linear-gradient(to bottom, #572671 80%, #451a5a);
 	border: none;
