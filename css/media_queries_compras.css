@@ -1,0 +1,47 @@
+@media screen and (max-width: 1800px) {
+	/* Seccion de entradas disponibles  */
+	.item-button {
+		margin-top: 5px;
+	}
+
+	/* Seccion de entrada seleccionada */
+	#compra-check__container {
+		width: 15%;
+	}
+
+	#compra-unit {
+		font-size: 30px;
+	}
+
+	#compra-name {
+		font-size: 16px;
+	}
+
+	/* Seccion de compra */
+	#compra-confirm__container {
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.compra-confirm_section {
+		padding: 30px;
+	}
+
+	#table-form {
+		width: 35%;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	#compra-check__container {
+		width: 20%;
+	}
+
+	/* Seccion de compra */
+
+	.table-headboard__item,
+	.table-cell {
+		max-width: 85px;
+		margin: 0 10px;
+	}
+}
