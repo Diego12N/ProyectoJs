@@ -196,9 +196,7 @@ body,
 }
 
 #article-event {
-	height: 50vh;
 	background-image: url(../img/fondo2.jpg);
-	background-size: 50%;
 	background-color: #111014;
 	background-repeat: no-repeat;
 	background-position: left;
@@ -206,16 +204,17 @@ body,
 
 .article-container {
 	display: flex;
+	background-size: 50%;
 	align-items: center;
 	width: 100%;
+	height: 50vh;
 	text-align: center;
-	padding: 20px;
+	padding: 0 50px;
 }
 
 #article-service {
 	display: flex;
 	justify-content: flex-end;
-	height: 50vh;
 	background-image: url(../img/luciano\ pereyra-fondo.jpg);
 	background-color: #18171c;
 	background-repeat: no-repeat;
@@ -246,11 +245,12 @@ body,
 	align-items: center;
 	color: #fff;
 	gap: 20px;
-	width: 50%;
+	width: 40%;
 }
 
 .service-card {
 	display: flex;
+	gap: 30px;
 	justify-content: space-around;
 }
 
@@ -269,6 +269,7 @@ body,
 }
 
 .item__container {
+	width: 30%;
 	display: inline-block;
 	font-weight: 600;
 }
@@ -279,9 +280,9 @@ body,
 	width: 35%;
 }
 
-/* .item__tittle {
-	padding: 10px;
-} */
+.item__tittle {
+	font-size: 16px;
+}
 
 .item__content {
 	font-size: 12px;
@@ -306,19 +307,19 @@ body,
 	overflow: hidden;
 }
 
+.img-container {
+	width: 100%;
+}
+
 .img-item {
 	width: 100%;
 	transition: all 0.7s;
 }
 
-.img-item:hover {
-	height: 110%;
-}
-
 .titulo-evento {
 	margin-top: 20px;
-	margin-bottom: 3px;
-	font-size: 20px;
+	min-height: 44px;
+	font-size: 16px;
 }
 
 .fecha-evento {
